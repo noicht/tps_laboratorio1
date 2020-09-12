@@ -28,8 +28,8 @@ int main()
     float resultadoDiv;
     float resultadoMult;
 
-    long resultFact1;
-    long resultFact2;
+    double resultFact1;
+    double resultFact2;
 
     //flags
 
@@ -145,7 +145,7 @@ int main()
 
                     if(numero1>=0)
                     {
-                        printf("\nFactorial de %.0f : %ld ", numero1, resultFact1);
+                        printf("\nFactorial de %.0f : %lf ", numero1, resultFact1);
                     }
                     else
                     {
@@ -155,7 +155,7 @@ int main()
 
                     if(numero2>=0)
                     {
-                        printf("\nFactorial de %.0f : %ld ", numero2, resultFact2);
+                        printf("\nFactorial de %.0f : %lf ", numero2, resultFact2);
 
                     }
                     else
