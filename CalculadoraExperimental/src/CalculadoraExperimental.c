@@ -62,7 +62,7 @@ int main()
         printf("5. Salir de la aplicacion. \n\n");
 
         printf("Seleccione una opcion: ");
-        fflush(stdout);
+        //fflush(stdout);
         scanf("%d", &opcion);
 
         system("cls");
@@ -71,7 +71,7 @@ int main()
         {
         case 1:
             printf("\nIngrese el primer digito: ");
-            fflush(stdout);
+            //fflush(stdout);
             scanf("%f", &numero1);
 
             flagNum1 = 1;
@@ -79,7 +79,7 @@ int main()
 
         case 2:
             printf("\nIngrese el segundo digito: ");
-            fflush(stdout);
+            //fflush(stdout);
             scanf("%f", &numero2);
 
             flagNum2 = 1;
