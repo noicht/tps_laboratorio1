@@ -28,8 +28,8 @@ int main()
     float resultadoDiv;
     float resultadoMult;
 
-    double resultFact1;
-    double resultFact2;
+    long int resultFact1;
+    long int resultFact2;
 
     //flags
 
@@ -41,13 +41,25 @@ int main()
     do
     {
 
-        printf("Calculadora experimental version 1.0 \n\n");
+        printf("\t\t\t\t****Calculadora experimental version 1.0**** \n\n");
 
-        printf("1. Ingresar primer digito: \n");
-        printf("2. Ingresar segundo digito: \n");
-        printf("3. Calcular operaciones: \n");
-        printf("4. Imprimir resultados: \n");
-        printf("5. Salir de la aplicacion: \n\n");
+        if(flagNum1 == 1)
+        {
+        	printf("--------------------------------------");
+        	printf("\nNumero 1: %f\n", numero1);
+        }
+        if (flagNum2 == 1)
+        {
+        	printf("--------------------------------------");
+        	printf("\nNumero 2: %f\n", numero2);
+        	printf("--------------------------------------\n");
+        }
+
+        printf("1. Ingresar primer digito. \n");
+        printf("2. Ingresar segundo digito. \n");
+        printf("3. Calcular operaciones. \n");
+        printf("4. Imprimir resultados. \n");
+        printf("5. Salir de la aplicacion. \n\n");
 
         printf("Seleccione una opcion: ");
         fflush(stdout);
@@ -61,6 +73,7 @@ int main()
             printf("\nIngrese el primer digito: ");
             fflush(stdout);
             scanf("%f", &numero1);
+
             flagNum1 = 1;
             break;
 
@@ -68,6 +81,7 @@ int main()
             printf("\nIngrese el segundo digito: ");
             fflush(stdout);
             scanf("%f", &numero2);
+
             flagNum2 = 1;
             break;
 
@@ -145,7 +159,7 @@ int main()
 
                     if(numero1>=0)
                     {
-                        printf("\nFactorial de %.0f : %lf ", numero1, resultFact1);
+                        printf("\nFactorial de %.0f : %li ", numero1, resultFact1);
                     }
                     else
                     {
@@ -155,7 +169,7 @@ int main()
 
                     if(numero2>=0)
                     {
-                        printf("\nFactorial de %.0f : %lf ", numero2, resultFact2);
+                        printf("\nFactorial de %.0f : %li \n", numero2, resultFact2);
 
                     }
                     else
@@ -180,7 +194,8 @@ int main()
             break;
 
         case 5:
-            printf("Saliendo, gracias por utilizarme!");
+            printf("Saliendo, gracias por utilizarme!\n");
+            system("pause");
             break;
 
         default:
