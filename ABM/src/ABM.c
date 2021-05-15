@@ -17,6 +17,8 @@
 
 int main()
 {
+	setbuf(stdout, NULL);
+
     char seguir = 's';
     int orderer;
     eEmployee employees[CANT_EMPLEADOS];
