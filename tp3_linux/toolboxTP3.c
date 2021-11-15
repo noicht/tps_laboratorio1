@@ -1,7 +1,16 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include "General.h"
-#include <string.h>
+/*
+ * toolboxTP3.c
+ *
+ *  Created on: 8 nov. 2021
+ *      Author: martin
+ */
+
+
+
+
+
+#include "toolboxTP3.h"
+
 #define MAX_LONG 100
 
 //isdigit(char*);
@@ -95,14 +104,14 @@ int getInt(char *MSG, char* ERROR_MSG)
     int return_;
     char buffer[MAX_LONG];
     printf("%s", MSG);
-    fflush(stdin);
+    __fpurge(stdin);
     scanf("%[^\n]", buffer);
 
     while(validate_forInts(buffer) == 0)
     {
         //Mientras este aca, dato incorrecto
         printf("%s", ERROR_MSG);
-        fflush(stdin);
+        __fpurge(stdin);
         scanf("%[^\n]", buffer);
 
     }
@@ -116,14 +125,14 @@ float getFloat(char MSG[], char ERROR_MSG[])
     float rtn;
     char temp[MAX_LONG];
     printf("%s", MSG);
-    fflush(stdin);
+    __fpurge(stdin);
     //__fpurge(stdin);
     scanf("%[^\n]", temp);
 
     while(validate_forFloats(temp) == 0)
     {
         printf("%s", ERROR_MSG);
-        fflush(stdin);
+        __fpurge(stdin);
         //__fpurge(stdin);
         scanf("%[^\n]", temp);
     }
@@ -139,7 +148,8 @@ int getIntRange(char* MSG, char* ERROR_MSG, int MIN, int MAX)
 
     while(return_ < MIN || return_ > MAX)
     {
-        printf("ERROR: fuera de rango --> [MIN] = %d [MAX] = %d\n", MIN,MAX);
+//        printf("ERROR: fuera de rango --> [MIN] = %d [MAX] = %d\n", MIN,MAX);
+        printf("%s", ERROR_MSG);
         return_=getInt(MSG, ERROR_MSG);
     }
 
@@ -149,18 +159,20 @@ int getIntRange(char* MSG, char* ERROR_MSG, int MIN, int MAX)
 
 
 
+
+
 void getString(char MSG[], char ERROR_MSG[], char auxString[], int tam)
 {
     char temp[MAX_LONG];
     printf("%s", MSG);
-    fflush(stdin);
+    __fpurge(stdin);
     scanf("%[^\n]", temp);
 
     while(strlen(temp) > tam || strlen(temp) == 0)
     {
-        printf("ERROR, Fuera de rango -> CARACTERES [MIN]=1 [MAX]=%d.\n", tam);
+        //printf("ERROR, Fuera de rango -> CARACTERES [MIN]=1 [MAX]=%d.\n", tam);
         printf("%s", ERROR_MSG);
-        fflush(stdin);
+        __fpurge(stdin);
         scanf("%[^\n]", temp);
     }
     strcpy(auxString, temp);
@@ -175,12 +187,20 @@ float getFloatRange(char MSG[], char ERROR_MSG[], float MIN, float MAX)
 
     while(rtn < MIN || rtn > MAX)
     {
-        printf("ERROR: fuera de rango --> [MIN] = %f [MAX] = %f\n", MIN,MAX);
+//        printf("ERROR: fuera de rango --> [MIN] = %f [MAX] = %f\n", MIN,MAX);
+    	printf("%s", ERROR_MSG);
         rtn = getFloat(MSG, ERROR_MSG);
     }
     return rtn;
 
 }
+
+//int getConfirmation(char MSG[], char MSG_ERROR[])
+//{
+//	int rtn = 1;
+//
+//
+//}
 
 
 
@@ -188,6 +208,5 @@ float getFloatRange(char MSG[], char ERROR_MSG[], float MIN, float MAX)
 void prueba(void)
 {
     printf("Probando");
-
 }
 */
